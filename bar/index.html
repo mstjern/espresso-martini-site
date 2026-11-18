@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="apple-itunes-app" content="app-id=6835197228">
+  <title>Espresso Martini</title>
+  <meta name="description" content="A bar shared from Espresso Martini, an iPhone app for rating espresso martinis at bars.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav aria-label="Pages">
+        <ul>
+          <li><a href="../index.html">Espresso Martini</a></li>
+          <li><a href="../terms.html">Terms</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="../support.html">Support</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1 id="bar-name">Espresso Martini</h1>
+      <p>Open in Espresso Martini to see the score, the price and the ratings.</p>
+      <p><a href="https://apps.apple.com/app/id6835197228">Espresso Martini on the App Store</a></p>
+    </main>
+    <footer>
+      <p>Espresso Martini · <a href="../terms.html">Terms of Use</a> · <a href="../privacy.html">Privacy Policy</a></p>
+    </footer>
+  </div>
+  <script>
+    // The bar's name from the link, shown as plain text only (never as HTML), at most 200 characters.
+    (function () {
+      var name = new URLSearchParams(location.search).get("n");
+      if (name === null) return;
+      name = Array.from(name.trim()).slice(0, 200).join("");
+      if (name !== "") document.getElementById("bar-name").textContent = name;
+    })();
+  </script>
+</body>
+</html>
